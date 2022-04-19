@@ -23,3 +23,20 @@ function listItems(){
 
 listItems(); //test to see if it console logs each item in the basket
 
+function empty(){
+    basket = [];
+}
+
+empty();
+console.log(basket); // test to see if basket is an empty array 
+
+const maxItems = 5;
+
+function isFull(){
+    if (basket < 5){
+        return false;
+    }
+        return true;
+}
+
+console.log (isFull()); //test to see if isFull function works
