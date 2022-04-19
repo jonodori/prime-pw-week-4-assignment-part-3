@@ -7,12 +7,17 @@ let basket = [];
 function addItem (item){
     basket.push(item);
     return true;
+
+    isFull();
 }
 
 console.log(`Basket is ${basket}`);
 console.log('Adding apples (expect true)', addItem('apples'));
 console.log('Adding bananas (expect true)', addItem('bananas'));
 console.log('Adding oranges (expect true)', addItem('oranges'));
+console.log('Adding milk (expect true)', addItem('milk'));
+// console.log('Adding cereal (expect true)', addItem('cereal'));
+// console.log('Adding coffee (expect true)', addItem('coffee'));
 console.log(`Basket is now ${basket}`);
 
 function listItems(){
@@ -27,15 +32,15 @@ function empty(){
     basket = [];
 }
 
-empty();
-console.log(basket); // test to see if basket is an empty array 
+// empty();
+// console.log(basket); // test to see if basket is an empty array 
 
 const maxItems = 5;
 
 function isFull(){
-    if (basket < 5){
+    if (basket.length < maxItems){
         return false;
-    }
+    }        
         return true;
 }
 
