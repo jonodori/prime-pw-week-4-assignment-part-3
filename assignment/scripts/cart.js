@@ -52,10 +52,16 @@ console.log (isFull()); //test to see if isFull function works
 
 function removeItem(item){    
     
-    let itemLocation = basket.indexOf(item); 
+    let itemLocation = basket.indexOf(item);     
 //created variable to find location of item in the index     
-    return basket.splice(itemLocation, 1);
-}
+//     if (itemLocation !== -1){
+//         return basket.splice(itemLocation, 1);
+//     }
+//         return null;
 
-console.log(removeItem('cereal'));
+return itemLocation !== -1 ? basket.splice(itemLocation, 1) : null;
+} //tenary operator 
+
+
+console.log(removeItem('milk'));
 
