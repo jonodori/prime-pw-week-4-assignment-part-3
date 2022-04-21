@@ -3,12 +3,16 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
+const maxItems = 5;
 
-function addItem (item){
-    basket.push(item);
+function addItem (item){    
+       
+    
+    if (!isFull()){
+        basket.push(item);
     return true;
-
-    isFull();
+    }
+    return false;
 }
 
 console.log(`Basket is ${basket}`);
@@ -16,8 +20,8 @@ console.log('Adding apples (expect true)', addItem('apples'));
 console.log('Adding bananas (expect true)', addItem('bananas'));
 console.log('Adding oranges (expect true)', addItem('oranges'));
 console.log('Adding milk (expect true)', addItem('milk'));
-// console.log('Adding cereal (expect true)', addItem('cereal'));
-// console.log('Adding coffee (expect true)', addItem('coffee'));
+console.log('Adding cereal (expect true)', addItem('cereal'));
+console.log('Adding coffee (expect false)', addItem('coffee'));
 console.log(`Basket is now ${basket}`);
 
 function listItems(){
@@ -35,7 +39,7 @@ function empty(){
 // empty();
 // console.log(basket); // test to see if basket is an empty array 
 
-const maxItems = 5;
+
 
 function isFull(){
     if (basket.length < maxItems){
@@ -45,3 +49,13 @@ function isFull(){
 }
 
 console.log (isFull()); //test to see if isFull function works
+
+function removeItem(item){    
+    
+    let itemLocation = basket.indexOf(item); 
+//created variable to find location of item in the index     
+    return basket.splice(itemLocation, 1);
+}
+
+console.log(removeItem('cereal'));
+
