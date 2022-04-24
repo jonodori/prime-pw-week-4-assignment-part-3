@@ -25,8 +25,8 @@ console.log('Adding coffee (expect false)', addItem('coffee'));
 console.log(`Basket is now ${basket}`);
 
 function listItems(){
-    for (let i = 0; i < basket.length; i++) {
-        console.log(basket[i]);        
+    for (let item of basket) { //tested for of loop
+        console.log(item);        
     }
 }
 
